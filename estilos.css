@@ -1,0 +1,16 @@
+header{
+    font-size: 60px;
+    text-align: center;
+    height: 100px;
+    width: auto;
+    color: red;
+}
+
+h1{
+    text-align: center;
+    color: whitesmoke;
+}
+
+html{
+    background-color: rgb(71, 71, 71);
+}
