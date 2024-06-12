@@ -1,16 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+}
+
 header{
     font-size: 60px;
     text-align: center;
     height: 100px;
     width: auto;
-    color: red;
+    color: rgba(211, 5, 5, 0.767);
+}
+
+header {
+    background-color: rgba(211, 5, 5, 0.767);
+    height: 100%;
+    width: auto;
+    padding: 15px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu {
+    float: right;
+}
+
+.menu ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.menu a {
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 0px 5px 0px 5px;
+    text-shadow: 0px 2px 6px black;
+}
+
+.menu a:hover {
+    color: rgb(225, 240, 15);
+    transition: 1s;
+}
+
+.logo {
+    float: left;
+    font-weight: bold;
+    color: whitesmoke;
+    text-shadow: 0px 2px 6px black;
+}
+
+span {
+    color:  rgb(225, 240, 15);
 }
 
 h1{
     text-align: center;
     color: whitesmoke;
+    font-size: 40px;
 }
 
 html{
     background-color: rgb(71, 71, 71);
+}
+
+footer {
+    background-color:rgba(211, 5, 5, 0.767);
+    background-size: 70px;
+    color: whitesmoke;
+    text-align: center;
+    height: 100%;
+    width: auto;
+    position: fixed bottom;
+}
+
+footer {
+    margin-bottom: 0px;
+}
+
+footer ul li {
+    display: inline-block;
+    padding: 10px;
+    box-shadow: 0 0 7px whitesmoke;
+    border-radius: 50%;
+    margin-top: 7px;
+}
+
+footer a {
+    color: whitesmoke;
+}
+
+footer a :hover {
+    color: rgb(225, 240, 15);
+    text-decoration: none;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    color: whitesmoke;
+    padding: 50px;
+}
+
+h6{
+    text-align: center;
+    font-size: 30px;
+    color: whitesmoke;
+    padding: 50px;
+    padding-top: 0;
 }
