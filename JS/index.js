@@ -1,8 +1,5 @@
-const Marca = prompt ("ingrese la marca de su vehiculo");
-const Modelo = parseInt (prompt ("ingrese el año de su vehiculo"));
-const KM = parseInt (prompt ("ingrese el kilometraje de su vehiculo"));
-const SeguroBase = 50000;
-const CotizarAño = 2;
+const SeguroBase = 40000;
+const cotizarPorMarca = document.getElementById(Marca);
 const Vehiculo = {
     "PEUGEOT" : 1.5,
     "RENAULT" : 1.2,
@@ -13,39 +10,35 @@ const Vehiculo = {
     "AUDI" : 2
 };
 
-const Nuevo = 7;
-const Usado = 5;
-const Antiguo = 3;
+const Modelo = document.getElementById('Año').value;
 
-const Kilometraje={
-    Nuevo : KM >= 5000,
-    Usado : 5000 < KM >= 100000,
-    Antiguo : KM > 100000
-};
-const PrecioAño = (Modelo, CotizarAño) => (Modelo * CotizarAño);
-const PrecioModelo = (Vehiculo,SeguroBase) => (Vehiculo * SeguroBase)
-const Cotizar = (SeguroBase , PrecioAño, PrecioModelo) => (SeguroBase * PrecioAño * PrecioModelo); 
-const CotizarPorKm = (Cotizar, Kilometraje) => (Cotizar * Kilometraje)
+function Kilometraje(KM) {
+    if (KM < 5000) {
+        return 2;
+    } else if (KM >= 5000 && KM <= 100000) {
+        return 3;
+    } else {
+        return 4;
+    }
+}
 
+function Cotizar(SeguroBase, cotizarPorMarca, Modelo, Kilometraje) {
+    return SeguroBase - cotizarPorMarca * Modelo + Kilometraje;
+}
 
 function CotizarVehiculo() {
-    if(isNaN(Modelo)){
-    alert(`Ingrese un numero por favor`);
-    } 
-    else if(2015>Modelo){
-    console.log("su vehiculo unicamente puede contratar seguro contra terceros por un valor de $40000");
+    const Kilometros = parseInt(document.getElementById('KM').value);
+    const Modelo = parseInt (document.getElementById('Año').value);
+
+    if (isNaN(Modelo)) {
+        alert(`Ingrese un número por favor`);
+    } else if (Modelo < 2015) {
+        console.log("Su vehículo únicamente puede contratar seguro contra terceros por un valor de $40000");
+    } else {
+        console.log("Su vehículo es adecuado para contratar cualquier plan de seguro");
     }
-    else{
-    console.log("su vehiculo es adecuado para contratar cualquier plan de seguro");
-    return CotizarSeguro()
-    }
+
+    const cotizacion = Cotizar(SeguroBase, cotizarPorMarca, Modelo, Kilometros);
+    console.log("El valor de un seguro contra todo riesgo para su vehiculo es de $", cotizacion);
 }
 
-function CotizarSeguro() {
-    PrecioAño();
-    PrecioModelo();
-    Cotizar();
-    CotizarPorKm();
-}
-
-CotizarVehiculo();

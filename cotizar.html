@@ -19,6 +19,16 @@
 </header>
 <body>
     <H1>BIENVENIDO A NUESTRA COTIZADORA DE SEGURO</H1>
+    <h3>ingresa los datos de tu vehiculo y nosotros cotizamos tu seguro</h3>
+    <form action="">
+        <label for="Marca"></label>
+        <input type="text" name="Marca" id="Marca" placeholder="marca" required>
+        <label for="Año"></label>
+        <input type="number" name="Año" id="Año" placeholder="año de fabricación">
+        <label for="KM"></label>
+        <input type="number" name="Kilometraje" id="KM" placeholder="Kilometraje">
+        <button type="button" onclick=CotizarVehiculo() >Cotizar</button>
+    </form>
     <script src="./JS/index.js"></script>
 </body>
 <footer>
