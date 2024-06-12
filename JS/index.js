@@ -28,7 +28,7 @@ function Cotizar(SeguroBase, cotizarPorMarca, Modelo, Kilometraje) {
 
 function CotizarVehiculo() {
     const Kilometros = parseInt(document.getElementById('KM').value);
-    const Modelo = parseInt (document.getElementById('Año').value);
+    const Modelo = document.getElementById('Año').value;
 
     if (isNaN(Modelo)) {
         alert(`Ingrese un número por favor`);
@@ -41,4 +41,9 @@ function CotizarVehiculo() {
     const cotizacion = Cotizar(SeguroBase, cotizarPorMarca, Modelo, Kilometros);
     console.log("El valor de un seguro contra todo riesgo para su vehiculo es de $", cotizacion);
 }
+
+if(Modelo>2025){
+    console.log ("Por favor, ingrese correctamente sus datos")
+}
+
 
