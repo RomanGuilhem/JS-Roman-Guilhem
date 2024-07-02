@@ -40,10 +40,9 @@ function CotizarVehiculo() {
 
     const cotizacion = Cotizar(SeguroBase, cotizarPorMarca, Modelo, Kilometros);
     console.log("El valor de un seguro contra todo riesgo para su vehiculo es de $", cotizacion);
+    localStorage.setItem("valor", cotizacion)
 }
 
 if(Modelo>2025){
     console.log ("Por favor, ingrese correctamente sus datos")
 }
-
-localStorage.setItem("valor", CotizarVehiculo())
