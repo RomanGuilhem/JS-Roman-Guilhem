@@ -13,13 +13,27 @@
         <ul>
             <li><a href="index.html">INICIO</a></li>
             <li><a href="cotizar.html">COTIZADORA</a></li>
-            <li><a href="pagar.html">CONTRATAR</a></li>
+            <li><a href="contratar.html">CONTRATAR</a></li>
+            <li><a href="registro.html">REGISTRARSE</a></li>
+            <li><a href="login.html">INICIAR SESION</a></li>
         </ul>
     </nav>
 </header>
 <body>
-    <H1>CONTRATA NUESTRO SERVICIO</H1>
-    <script src="./JS/index.js"></script>
+    <H1>REGISTRATE PARA ACCEDER A NUESTROS SERVICIOS</H1>
+    <h2>INGRESA TUS DATOS Y TE ENVIAREMOS UN MAIL PARA ORGANIZAR UNA REUNION, EN LA CUAL NOS COMUNICAREMOS AL NUMERO QUE INGRESES AL SIGUIENTE FORMULARIO</h2>
+    <form action="">
+        <label for="nombreApellido"></label>
+        <input type="text" name="Nombre" id="usuario" placeholder="Ingrese un nombre de usuario" required>
+        <label for="Email"></label>
+        <input type="email" name="Mail" id="email" placeholder="Ingrese su email" required>
+        <label for="Celular"></label>
+        <input type="number" name="Celular" id="celular" placeholder="Ingrese su numero de telefono personal" required>
+        <label for="contraseña"></label>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese una contraseña" required>
+        <button type="button" onclick= Registrar() >Registrarse</button>
+    </form>
+    <script src="./JS/registro.js"></script>
 </body>
 <footer>
     <p>

@@ -20,18 +20,15 @@
     </nav>
 </header>
 <body>
-    <H1>BIENVENIDO A NUESTRA COTIZADORA DE SEGURO</H1>
-    <h3>ingresa los datos de tu vehiculo y nosotros cotizamos tu seguro</h3>
+    <H1>INICIA SESION EN TU CUENTA</H1>
     <form action="">
-        <label for="Marca"></label>
-        <input type="text" name="Marca" id="Marca" placeholder="marca" required>
-        <label for="Año"></label>
-        <input type="number" name="Año" id="Año" placeholder="año de fabricación">
-        <label for="KM"></label>
-        <input type="number" name="Kilometraje" id="KM" placeholder="Kilometraje">
-        <button type="button" onclick=CotizarVehiculo() >Cotizar</button>
+        <label for="nombreApellido"></label>
+        <input type="text" name="Nombre" id="usuario" placeholder="Ingrese un nombre de usuario" required>
+        <label for="contraseña"></label>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese una contraseña" required>
+        <button type="button" onclick= Login() >Iniciar sesión</button>
     </form>
-    <script src="./JS/index.js"></script>
+    <script src="./JS/registro.js"></script>
 </body>
 <footer>
     <p>

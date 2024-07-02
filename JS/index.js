@@ -46,4 +46,4 @@ if(Modelo>2025){
     console.log ("Por favor, ingrese correctamente sus datos")
 }
 
-
+localStorage.setItem("valor", CotizarVehiculo())
