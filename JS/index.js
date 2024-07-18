@@ -49,36 +49,3 @@ function CotizarVehiculo() {
     })
     localStorage.setItem("valor", cotizacion)
 }}
-
-
-    const app = document.getElementById('contenedorMcqueen');
-
-let url = "https://pokeapi.co/api/v2/pokemon/pikachu";
-
-fetch(url)
-
-    .then(respuesta => respuesta.json())
-
-    .then((data) => mostrarMcqueen(data))
-
-    function mostrarPokemon(data){
-
-        const div = document.createElement("div");
-
-        div.classList.add("Mcqueen");
-
-        div.innnerHTML = `
-
-            <h2>${data.name}</h2>
-
-            <img src="${sprites.other['official-artwork'].front_default}" alt="">
-
-        `
-
-    
-
-        app.append(div)
-
-    }
-
-<div id="contenedorMcqueen"></div>
