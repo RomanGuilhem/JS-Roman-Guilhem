@@ -38,7 +38,12 @@ function CotizarVehiculo() {
             confirmButtonText: 'Reintentar'
         });
     } else if (Modelo < 2015)  {
-        console.log("Su vehículo únicamente puede contratar seguro contra terceros por un valor de $40000");
+        Swal.fire({
+            title: 'Su vehiculo no cumple los requisitos de seguros completos',
+            text: 'Su vehículo únicamente puede contratar seguro contra terceros por un valor de $40000',
+            icon: 'info',
+            confirmButtonText: 'Continuar'
+        });
     } else {
     const cotizacion = Cotizar(SeguroBase, cotizarPorMarca, Modelo, Kilometros)
     Swal.fire({
