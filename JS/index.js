@@ -23,26 +23,62 @@ function Kilometraje(KM) {
 }
 
 function Cotizar(SeguroBase, cotizarPorMarca, Modelo, Kilometraje) {
-    return SeguroBase - cotizarPorMarca * Modelo + Kilometraje;
+    return SeguroBase + cotizarPorMarca * Modelo + Kilometraje;
 }
 
 function CotizarVehiculo() {
     const Kilometros = parseInt(document.getElementById('KM').value);
     const Modelo = document.getElementById('Año').value;
 
-    if (isNaN(Modelo)) {
-        alert(`Ingrese un número por favor`);
-    } else if (Modelo < 2015) {
+    if (Modelo>=2025) {
+        Swal.fire({
+            title: 'Error año de fabricacion',
+            text: 'El año de fabricacion ingresado es incorrecto, por favor vuelva a ingresar los datos correctamente',
+            icon: 'warning',
+            confirmButtonText: 'Reintentar'
+        });
+    } else if (Modelo < 2015)  {
         console.log("Su vehículo únicamente puede contratar seguro contra terceros por un valor de $40000");
     } else {
-        console.log("Su vehículo es adecuado para contratar cualquier plan de seguro");
+    const cotizacion = Cotizar(SeguroBase, cotizarPorMarca, Modelo, Kilometros)
+    Swal.fire({
+        title: 'Seguro cotizado',
+        text: 'El valor de un seguro contra todo riesgo para su vehiculo es de $ ' + cotizacion,
+        icon: 'info',
+        confirmButtonText: 'Continuar'
+    })
+    localStorage.setItem("valor", cotizacion)
+}}
+
+
+    const app = document.getElementById('contenedorMcqueen');
+
+let url = "https://pokeapi.co/api/v2/pokemon/pikachu";
+
+fetch(url)
+
+    .then(respuesta => respuesta.json())
+
+    .then((data) => mostrarMcqueen(data))
+
+    function mostrarPokemon(data){
+
+        const div = document.createElement("div");
+
+        div.classList.add("Mcqueen");
+
+        div.innnerHTML = `
+
+            <h2>${data.name}</h2>
+
+            <img src="${sprites.other['official-artwork'].front_default}" alt="">
+
+        `
+
+    
+
+        app.append(div)
+
     }
 
-    const cotizacion = Cotizar(SeguroBase, cotizarPorMarca, Modelo, Kilometros);
-    console.log("El valor de un seguro contra todo riesgo para su vehiculo es de $", cotizacion);
-    localStorage.setItem("valor", cotizacion)
-}
-
-if(Modelo>2025){
-    console.log ("Por favor, ingrese correctamente sus datos")
-}
+<div id="contenedorMcqueen"></div>

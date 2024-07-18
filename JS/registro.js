@@ -10,9 +10,19 @@ function Registrar (){
         localStorage.setItem('email', EMAIL);
         localStorage.setItem('celular', CELULAR);
         localStorage.setItem('contraseña', CONTRASEÑA);
-        alert('¡Usuario registrado exitosamente!');
+        Swal.fire({
+          title: 'Bienvenido/a, ' + USUARIO,
+          text: 'Registro completado correctamente',
+          icon: 'success',
+          confirmButtonText: 'Iniciar'
+        });
     } else {
-      alert('Por favor, complete todos los campos.');
+      Swal.fire({
+        title: 'Error en el registro',
+        text: 'Complete todos los campos y vuelva a intentar',
+        icon: 'warning',
+        confirmButtonText: 'Reintentar'
+      });
     }
   }
 
@@ -26,8 +36,19 @@ function Login (){
         const contraseñaRegistrada = localStorage.getItem('contraseña');
     
         if (USUARIO === usuarioRegistrado && CONTRASEÑA === contraseñaRegistrada) {
-          alert('Bienvenido/a, ' + USUARIO);
+          Swal.fire({
+            title: 'Bienvenido/a, ' + USUARIO,
+            text: 'Ingresaste correctamente',
+            icon: 'success',
+            confirmButtonText: 'Continuar'
+          });
         } else {
-          alert('El usuario o la contraseña ingresados no son correctos');
+          Swal.fire({
+            title: 'Error al iniciar sesión',
+            text: 'Ingrese los datos correctamente y vuelva a intentarlo',
+            icon: 'error',
+            confirmButtonText: 'Continuar'
+          });
     }
 }}
+

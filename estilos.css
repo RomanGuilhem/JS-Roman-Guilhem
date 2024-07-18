@@ -164,6 +164,7 @@ main {
     height: 100%;
     width: auto;
     justify-content: center;
+    padding: 20px;
 }
 
 main ul li {
@@ -171,4 +172,5 @@ main ul li {
     text-align: center;
     width: 350px;
     justify-content: center;
+    padding: 20px;
 }
