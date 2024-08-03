@@ -52,3 +52,9 @@ function Login (){
     }
 }}
 
+document.getElementById('Mostrar-Ocultar').addEventListener('click', function () {
+  const passwordField = document.getElementById('contraseña');
+  const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordField.setAttribute('type', type);
+  this.textContent = type === 'password' ? 'Mostrar' : 'Ocultar';
+});

@@ -20,22 +20,17 @@
     </nav>
 </header>
 <body>
-    <H1>REGISTRATE PARA ACCEDER A NUESTROS SERVICIOS</H1>
-    <h2>INGRESA TUS DATOS Y TE ENVIAREMOS UN MAIL PARA ORGANIZAR UNA REUNION, EN LA CUAL NOS COMUNICAREMOS AL NUMERO QUE INGRESES AL SIGUIENTE FORMULARIO</h2>
+    <h1>Calculadora de Ahorro e Inversión</h1>
     <form action="">
-        <label for="nombreApellido"></label>
-        <input type="text" name="Nombre" id="usuario" placeholder="Ingrese un nombre de usuario" required>
-        <label for="Email"></label>
-        <input type="email" name="Mail" id="email" placeholder="Ingrese su email" required>
-        <label for="Celular"></label>
-        <input type="number" name="Celular" id="celular" placeholder="Ingrese su numero de telefono personal" required>
-        <label for="contraseña"></label>
-        <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese una contraseña" required>
-        <button type="button" id="Mostrar-Ocultar"><i class="fa-solid fa-eye"></i></button>
-        <button type="button" onclick= Registrar() >Registrarse</button>
-        <a href="login.html">Ya estas registrado?</a>
+        <label for="cantidadInicial">Cantidad Inicial:</label>
+        <input type="number" id="cantidadInicial" required>
+        <label for="tasaInteres">Tasa de Interés Anual (%):</label>
+        <input type="number" id="tasaInteres" step="0.01" required>
+        <label for="años">Duración (años):</label>
+        <input type="number" id="años" required>
+        <button type="button" onclick="calcularInversion()">Calcular</button>
     </form>
-    <script src="./JS/registro.js"></script>
+    <script src="./JS/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 <footer>
